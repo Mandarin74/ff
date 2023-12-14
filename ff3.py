@@ -26,8 +26,8 @@ def make_files():
 def stat_info():
     with open('stat.txt', 'a') as file:
         current_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        file_count = get_file_count_from_config()
-        file_size = get_file_size_from_config()
+        file_count = get_file_count_from_config(f'{folder_in})
+        file_size = get_file_size_from_config(f'{folder_in})
         with open('proc/loadavg', 'r') as loadavg_file:
             cpu_stats = loadavg_file.read()
         stat_in = f'{current_time}, {file_count}, {file_size}, {cpu_stats}n'
